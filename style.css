@@ -9,6 +9,9 @@
     --clr-gray:#808080;
 
 }
+body{
+    display: flex;
+}
 /* here is a every ul margin and padding , list-style-type:none */
 ul{
     margin: 0;
@@ -17,9 +20,11 @@ ul{
 }
 nav{
     position: fixed;
-    width: 300px;
     height: 100%;
+    width:300px;
     background-color: var(--clr-whitesmoke);
+    border-left: 1px solid var(--clr-gray);
+    overflow-y: scroll;
 }
 body{
     width: 95%;
@@ -41,24 +46,29 @@ body{
     font: normal  300 1rem   'Times New Roman', Times, serif;
     text-transform: capitalize;
 }
+.side-navbar > div:nth-child(2) > form > div > label{
+    color: var(--clr-gray);
+    margin: 0.8rem 0rem;
+}
 .side-navbar > div:nth-child(2) > form > div > label::before{
     content: '';
     font-family: 'Font Awesome 5 Free';
     font-weight: bold;
+    padding-right: 0.5rem;
+    color: #008000;
 }
-.side-navbar > div:nth-child(2) > form > div >  label:nth-of-type(1):before{
+.side-navbar > div:nth-child(2) > form > div >  label[for="check-in-date"]::before{
     content: '\f274';
 }
-.side-navbar > div:nth-child(2) > form > div >  label:nth-of-type(2)::before{
+.side-navbar > div:nth-child(2) > form > div >  label[for="check-out-date"]::before{
     content: '\f274';
 }
-.side-navbar > div:nth-child(2) > form > div > label:nth-of-type(3)::before{
+.side-navbar > div:nth-child(2) > form > div > label[for="adults"]::before{
     content: '\f183';
 }
-.side-navbar > div:nth-child(2) > form > div > label:last-of-type(4)::before{
-    content: '\f183';
-}
-
+.side-navbar > div:nth-child(2) > form > div > label[for="kids"]::before{
+    content: '\f1ae'; 
+} 
 .side-navbar > div:nth-child(2) > form > div input{
     width: 100%;
     background-color:#ffffffe3;
@@ -94,28 +104,165 @@ body{
     padding: 0.3rem 0rem;
     font-size: 1.2rem;
 }
-.side-navbar > div:nth-child(3) > ul li a:first-child::before{
-    content: '\f1ad';
+.side-navbar > div:nth-child(3) > ul li a:hover{
+    text-decoration: underline green;
+    color:#008000;
+}
+.side-navbar > div:nth-child(3) > ul > li a::before{
+    content: '';
     font-family: "Font Awesome 5 Free";
     font-weight: bold;
+    color: #008000;
+    padding-right: 0.8rem;
 }
-.side-navbar > div:nth-child(3) > ul li a:nth-child(2)::before{
-    content: '\f09e';
-    font-family: "Font Awesome 5 Free";
-    font-weight: bold;
-}
-/* .side-navbar > div:nth-child(3) > ul li a:first-of-type::before{
+ .side-navbar > div:nth-child(3) > ul li a[href="#apartment"]::before{
     content: '\f1ad';
 }
-.side-navbar > div:nth-child(3) > ul li a:nth-of-type(2)::before{
+.side-navbar > div:nth-child(3) > ul li a[href="#subscribe"]::before{
     content: '\f09e';
-} */
-/* .side-navbar > div:nth-child(3) > ul li a:nth-of-type(3)::before{
-    content: '\e170';
-} */
+} 
+ .side-navbar > div:nth-child(3) > ul li a[href="#contact"]::before{
+    content: '\f0e0';
+} 
 @media screen and (min-width:1400px) {
     body{
         width: 70%;
         margin: 0px auto 0px auto;
     }
 }
+/* Main Content area style start here */
+main{
+    width: 70%;
+    margin-left: 320px;
+}
+.container-room > div > img{
+    width: 100%;
+    object-fit: cover;
+}
+.container-room{
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto auto auto;
+}
+.container-room > .room-1{
+    grid-area: 1/ 1/ 2/ span 4;
+}
+.container-room > .room-2{
+    grid-area: 2/ 1/ 3/ span 1;
+}
+.container-room > .room-3{
+    grid-area: 2/ 2/ 3/ span 1;
+}
+.container-room > .room-4{
+    grid-area: 2/ 3/ 3/ span 1;
+}
+.container-room > .room-5{
+    grid-area: 2/ 4/ 3/ span 1;
+}
+.container-room > div > img:not(#display-img){
+    opacity: 0.6;
+}
+.container-room > div > img:hover:not(#display-img){
+    opacity: initial;
+}
+/* apartment room area style end here */
+/* apartment space like people, bathroom, bedroom, check in, out area style start here */
+.space-area{
+    display: -ms-flexbox;
+    display: flex;
+    padding: 1rem 0px 2rem 0px;
+    border-bottom: 1px solid var(--clr-gray);
+}
+.space-area > div{
+    width: 50%;
+}
+.space-area > div > ul li{
+    font: normal  400 1.3rem/3rem  'Times New Roman', Times, serif;
+}
+.space-area > div > ul li span{
+    margin: 0px 0.3rem 0px 0.3rem;
+}
+.space-area > div > ul li::before{
+    content: '';
+    font-weight: bold;
+    font-family: "Font Awesome 5 Free";
+    font-size: 1rem;
+    padding-right: 1rem;
+    color:#008000;
+}
+.space-area > div:first-child > ul li:first-child::before{
+    content: '\f183';
+}
+.space-area > div:first-child > ul li:nth-child(2):before{
+    content: '\f2cd';
+    
+}
+.space-area > div:first-child > ul li:nth-child(3):before{
+    content: '\f236';
+    
+}
+.space-area > div:last-child > ul li::before{
+    content:'\f017'
+}
+/* apartment space like people, bathroom, bedroom, check in, out area style end here  */
+/* apartment amenities area style start here */
+.amenities-area{
+    display: -ms-flexbox;
+    display: flex;
+    padding: 1rem 0px 2rem 0px;
+    border-bottom: 1px solid var(--clr-gray);
+}
+.amenities-area > div{
+    width: 50%;
+}
+.amenities-area > div > ul li{
+    font: normal 400 1.3rem/3rem 'Times New Roman', Times, serif ;
+}
+.amenities-area > div > ul li::before{
+    content: '';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: bold;
+    padding-right: 1rem;
+    color: #008000;
+}
+
+.amenities-area > div:nth-child(1) > ul li:first-child::before{
+    content: '\f2cc';
+}
+.amenities-area > div:nth-child(1) > ul li:nth-child(2)::before{
+    content: '\f1eb';
+}
+.amenities-area > div:nth-child(1) > ul li:nth-child(3)::before{
+    content: '\f26c';
+}
+.amenities-area > div:nth-child(2) > ul li:first-child::before{
+    content: '\f2e7';
+}
+.amenities-area > div:nth-child(2) > ul li:nth-of-type(2)::before{
+    content: '\e299';
+}
+.amenities-area > div:nth-child(2) > ul li:last-child::before{
+    content: '\f368';
+}
+/* apartment amenities area end here */
+/* website responsive for all device media query code  here */
+@media screen and (max-width:700px) {
+    .amenities-area,.space-area{
+        display: initial;
+    }
+    .amenities-area , .space-area > div{
+        width: 100%;
+    }
+    .amenities-area, div > ul li{
+        text-align: center;
+    }
+    .space-area > ul li{
+        text-align: center  ;
+    }
+}
+
+
+
+
