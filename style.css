@@ -7,11 +7,10 @@
 :root{
     --clr-whitesmoke:#f5f5f5;
     --clr-gray:#808080;
+    --clr-purple:#008000;
 
 }
-body{
-    display: flex;
-}
+ 
 /* here is a every ul margin and padding , list-style-type:none */
 ul{
     margin: 0;
@@ -55,7 +54,7 @@ body{
     font-family: 'Font Awesome 5 Free';
     font-weight: bold;
     padding-right: 0.5rem;
-    color: #008000;
+    color: var(--clr-purple);
 }
 .side-navbar > div:nth-child(2) > form > div >  label[for="check-in-date"]::before{
     content: '\f274';
@@ -90,7 +89,7 @@ body{
     padding: 0.5rem 0rem;
     font: normal  300 1.2rem 'Times New Roman', Times, serif;
     border: none;
-    background-color: #008000;
+    background-color: var(--clr-purple);
     color: var(--clr-whitesmoke);
     border-radius: 5px;
 }
@@ -106,13 +105,13 @@ body{
 }
 .side-navbar > div:nth-child(3) > ul li a:hover{
     text-decoration: underline green;
-    color:#008000;
+    color:var(--clr-purple);
 }
 .side-navbar > div:nth-child(3) > ul > li a::before{
     content: '';
     font-family: "Font Awesome 5 Free";
     font-weight: bold;
-    color: #008000;
+    color: var(--clr-purple);
     padding-right: 0.8rem;
 }
  .side-navbar > div:nth-child(3) > ul li a[href="#apartment"]::before{
@@ -131,10 +130,10 @@ body{
     }
 }
 /* Main Content area style start here */
-main{
+ main,footer{
     width: 70%;
     margin-left: 320px;
-}
+} 
 .container-room > div > img{
     width: 100%;
     object-fit: cover;
@@ -190,7 +189,7 @@ main{
     font-family: "Font Awesome 5 Free";
     font-size: 1rem;
     padding-right: 1rem;
-    color:#008000;
+    color:var(--clr-purple);
 }
 .space-area > div:first-child > ul li:first-child::before{
     content: '\f183';
@@ -225,7 +224,7 @@ main{
     font-family: 'Font Awesome 5 Free';
     font-weight: bold;
     padding-right: 1rem;
-    color: #008000;
+    color: var(--clr-purple);
 }
 
 .amenities-area > div:nth-child(1) > ul li:first-child::before{
@@ -247,8 +246,102 @@ main{
     content: '\f368';
 }
 /* apartment amenities area end here */
+/* apartment extra info area style start  here */
+.container-info{
+    margin: 3rem 0px 3rem 0px;
+}
+.container-info > div > h1{
+    font:normal 500 1.5rem  'Times New Roman', Times, serif;
+    margin-top: 1rem;
+}
+.container-info > div > .info-status{
+    margin-bottom: 0px;
+}
+.container-info > div > p:last-child span {
+    font-size: 2rem;
+    position: relative;
+    top: 0.5rem;
+    padding-left: 0.5rem;
+}
+.container-info > div:nth-child(2) h2{
+    font:normal 500 1.5rem  'Times New Roman', Times, serif;
+}
+.container-info > div:nth-child(2) .btn-subscribe {
+    padding: 0.4rem 3rem;
+    border: 1px solid var(--clr-whitesmoke);
+    background-color: var(--clr-purple);
+    color: var(--clr-whitesmoke);
+    font: normal  400 1rem  'Times New Roman', Times, serif ;
+    border-radius: 5px;
+}
+.container-info > div:nth-child(2) .btn-subscribe:hover{
+    background-color: var(--clr-gray);
+    color: black;
+}
+/*apartment extra info  area style end here */
+/* contact area style start here */
+.contact-area > div > h1 {
+    font: normal small-caps bold 2rem/2rem 'Times New Roman', Times, serif ;
+}
+.contact-area > div > ul li{
+    font-size: 1rem;
+    font-weight: normal;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.contact-area > div > ul li::before{
+    content: '';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: bold;
+    margin-right: 0.5rem;
+    color: var(--clr-purple);
+}
+.contact-area > div > ul li:first-child::before{
+    content: '\f3c5';
+}
+.contact-area > div > ul li:nth-child(2)::before{
+    content: '\f095';
+}
+.contact-area > div > ul li:nth-child(3)::before{
+    content: '\f0e0';
+}
+.contact-area > div > p{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+}
+/* contact from like massage submit area style here */
+.contact-area > div > form > div > input{
+    width: 100%;
+    padding: 0.2rem 0px 0px 0.5rem;
+    height: 40px;
+}
+.contact-area > div > form > div > textarea {
+    width: 100%;
+    height: 50px;
+    padding: 0.5rem 0px 0px 1rem;
+}
+.contact-area > div > form > div > .btn-submit{
+    padding: 0.4rem 3rem;
+    border: 1px solid var(--clr-whitesmoke);
+    background-color: var(--clr-purple);
+    color: var(--clr-whitesmoke);
+    font: normal small-caps  400 1rem  "Raleway", Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+    border: 1px solid var(--clr-purple);
+}
+.contact-area > div > form > div > .btn-submit:hover{
+    background-color: var(--clr-whitesmoke);
+    color: black;
+}
+footer{
+    background-color: #5C5C5C;
+}
+footer > p{
+    padding-top: 2rem;
+    text-align: center;
+    margin-bottom: 0;
+}
 /* website responsive for all device media query code  here */
-@media screen and (max-width:700px) {
+/* @media screen and (max-width:700px) {
     .amenities-area,.space-area{
         display: initial;
     }
@@ -261,7 +354,7 @@ main{
     .space-area > ul li{
         text-align: center  ;
     }
-}
+} */
 
 
 
